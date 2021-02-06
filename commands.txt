@@ -1,0 +1,21 @@
+1. Create new Github repo, named "Basic_repo" and set it to public. https://github.com/DustinSMac/basic_repo
+2. Open Git bash
+    Create local repo called basic_repo:
+        cd ~
+        cd Desktop
+        mkdir basic_repo
+    Create some files inside local repo:
+        touch index.html styles.css simple.txt commands.txt
+    Add,commit and push these changes to Github
+        git init // initialize git repo at current folder basic_repo
+        git add . //stage all the files in basic_repo
+        git commit -m "Initial commiting for basic_repo" // commit all the files
+        git remote add origin https://github.com/DustinSMac/basic_repo.git // add remote repo with same name to current repo
+        git branch -M main
+        git push -u origin main
+    Make change to files and push them to github:
+        code index.html styles.css //open both on VSCode for edit then save both.
+        git add . //stage the modified files again
+        git commit -m "Adding stuff to html and css" //make new commit
+        git push -u origin main // push new changes to github
+        
