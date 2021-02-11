@@ -1,4 +1,0 @@
-secret.js
-package/
-log*
-*.txt
