@@ -1,0 +1,16 @@
+img {
+    width: 300px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    size: 30px;
+    margin: auto;
+}
+table, th, td {
+    border: 1px solid black;
+}
+form .label {
+    display:block;
+}
