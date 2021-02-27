@@ -1,0 +1,15 @@
+img {
+    width: 200px;
+    height:auto;
+}
+body{
+    background-color: blueviolet;
+
+}
+h1{
+    font-size: larger;
+    font-style: italic;
+}
+p{
+    color: rgb(235, 16, 16);
+}
