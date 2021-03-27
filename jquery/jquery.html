@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Practice Page</title>
+    <!-- Must have Jquery library in order to use jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        .green {
+            color: green;
+        }
+
+        #append {
+            background: green;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('button.btn_h1').click(function () {
+                alert("This is the first example of clicking and showing Alert!");
+            });
+            $("button.btn_h2").click(function () {
+                $("h1,.btn_h1,h2").hide();
+                $("button.btn_unhide").show();
+                $("button.btn_h2").hide();
+            });
+            $("button.btn_unhide").click(function () {
+                $("h1,.btn_h1,h2,button.btn_h2").show();
+                $("button.btn_unhide").hide();
+            });
+            $("button.btn_toggle").click(function () {
+                $("img.ghost,button.sneak,p,button.btn_toggle").toggle("slow");
+            });
+            $("button.btn_restore").click(function () {
+                $("img.ghost,button.sneak,p,button.btn_toggle").toggle("slow");
+            });
+            $("button.btn_up").click(function () {
+                if ($("img.ghost").first().is(":hidden")) {
+                    $("img.ghost").show("slow");
+                } else {
+                    $("img.ghost").slideUp("slow");
+                }
+            });
+            $("button.btn_down").click(function () {
+                if ($("img.ghost").first().is(":hidden")) {
+                    $("img.ghost").slideDown("slow");
+                } else {
+                    $("img.ghost").hide();
+                }
+            });
+            $("button.btn_slide").click(function () {
+                if ($("img.ghost").first().is(":hidden")) {
+                    $("img.ghost").show("slow");
+                } else {
+                    $("img.ghost").slideToggle("slow");
+                }
+            });
+            $("button.btn_fade").click(function () {
+                if ($("p.fadeIT").first().is(":hidden")) {
+                    $("p.fadeIT").fadeIn("slow");
+                    $("button.btn_fade").text("Now fade it out");
+                } else {
+                    $("p.fadeIT").fadeOut("slow");
+                    $("button.btn_fade").text("Try this button");
+                }
+            });
+            $("button.btn_addClass").click(function () {
+                $("h3").addClass("green");
+            });
+            $("button.btn_before").click(function () {
+                $("button.btn_before").before("<span>Ola</span>");
+            });
+            $("button.btn_after").click(function () {
+                $("button.btn_after").after("<span>Adios</span>");
+            });
+            $("button.btn_append").click(function () {
+                $("p#append").append("<span>Just adding this to this blank paragraph</span>");
+            })
+            $("button.btn_html").click(function () {
+                $("p#html").html("<b>Bold</b>");
+            });
+            $("button.btn_attr").click(function () {
+                $("img#attr").attr("alt", "I just changed it");
+            });
+            $("button.btn_val").click(function () {
+                if ($("input").val() == "") {
+                    alert("Please write something");
+                } else {
+                    if ($("input").val() == "4") {
+                        $("label.result").append($('input').val(), " is right answers")
+                    } else {
+                        $("label.result").append($('input').val(), " is the wrong answer")
+                    }
+                }
+
+            })
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>First example of Jquery</h1>
+    <button class="btn_h1">Click to show alert message</button>
+    <hr>
+    <h2>Second example of Jquery, gonna hide stuff</h2>
+    <button class="btn_h2">Click to hide stuff</button>
+    <button style="display:none" class="btn_unhide">Click to unhide stuff now</button>
+    <hr>
+    <p>Wanne see a magic trick?</p>
+    <img class="ghost" src="ghost.png" alt="just ghost pic" style="display:none">
+    <button class="btn_toggle">Try me.</button>
+    <p style="display:none">still see the ghost pic? Try these awesome buttons below</p>
+    <button style="display:none" class="btn_up sneak">Slide it up</button>
+    <button style="display:none" class="btn_down sneak">Slide it down</button>
+    <button style="display:none" class="btn_slide sneak">Slide it</button>
+    <button style="display:none" class="btn_restore sneak">ain't that fun?back to normal now</button>
+    <hr>
+    <p style="display:none" class="fadeIT">Gonna do some fade with this</p>
+    <button class="btn_fade">Try this button</button>
+    <hr>
+    <h3>Gonna make this text green with below button</h3>
+    <button class="btn_addClass">Make it green</button>
+    <hr>
+    <button class="btn_before">Insert something before this button</button>
+    <hr>
+    <button class="btn_after">Same, insert something after this</button>
+    <hr>
+    <p id="append"> </p>
+    <button class="btn_append">Append something</button>
+    <hr>
+    <p id="html">Gonna input some html to this paragraph</p>
+    <button class="btn_html">Add html above</button>
+    <hr>
+    <img src="#" alt="Placeholder" width="50px" height="50px" id="attr"></img>
+    <button class="btn_attr">Change img's alt</button>
+    <hr>
+    <label>What is 2 + 2?</label><br>
+    <input type="text" placeholder="Write answer here..."><br>
+    <button class="btn_val">Submit</button>
+    <label class="result"></label>
+
+</body>
+
+</html>

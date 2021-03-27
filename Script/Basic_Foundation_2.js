@@ -101,7 +101,7 @@ function ReverseArray(arr) {
     }
     return arr;
 }
-x = [1, 2, 3, 4, 5, 6, 7];
+x = [1, 2, 3, 4, 5, 6];
 console.log(ReverseArray(x));
 // Outlook: Negative - Given an array, create and return a new one containing all the values of the original array, but make them all negative (not simply multiplied by -1). Given [1,-3,5], return [-1,-3,-5].
 function MakeNegative(arr) {
